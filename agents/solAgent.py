@@ -26,10 +26,8 @@ class solAgent(Agent):
             return []
         points = [[0,0]]
         nodes =[0]
-        self.delivery = []
         for _, ele in deliveries.items():
             points.append([ele['lat'], ele['lng']])
-            self.delivery.append(ele)
             nodes.append(ele['id'])
         dist_matrix = spatial.distance_matrix(points, points)
         remind_dist_matrix = dist_matrix.copy()
@@ -38,18 +36,27 @@ class solAgent(Agent):
 
         return dist_matrix, remind_dist_matrix
 
+    def ClusterIndices(self, clustNum, labels_array):  # numpy
+        return np.where(labels_array == clustNum)[0]
+
     def clusterDeliveries(self,deliveries, n_vehicles):
         if len(deliveries) == 0:
             return []
         if n_vehicles == 1:
             return deliveries
         points = []
-        for _,ele in deliveries.item():
+        delivery_points = []
+        for _,ele in deliveries.items():
             points.append([ele['lat'],ele['lng']])
+            delivery_points.append(ele['id'])
         standard = StandardScaler()
         standard_points = standard.fit_transform(points)
         kmeans = KMeans(n_clusters= n_vehicles)
-        
+        kmeans.fit(standard_points)
+        tour={}
+        for veh in range(n_vehicles):
+            tour[veh] = self.ClusterIndices(veh, kmeans.labels_)
+
 
     def swapPositions(self, slist, pos1, pos2):
 
@@ -112,12 +119,12 @@ class solAgent(Agent):
         self.n_deliveries = len(delivery_to_do)
         self.n_nodes = 1 + len(delivery_to_do)
 
-
+        self.clusterDeliveries(self.env.get_delivery(),self.n_vehicles)
 
         # For 1 vehicles - one tour
-        self.distCalculate(self.env.get_delivery())
-        cycle = self.solTSP(delivery_to_do)
+        # self.distCalculate(self.env.get_delivery())
+        # cycle = self.solTSP(delivery_to_do)
 
         #For more than 1 vehicles
         #TODO: make optimze batch
-        return cycle
+        # return cycle
