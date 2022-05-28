@@ -96,7 +96,7 @@ class solAgent(Agent):
                 cycle.append(0)
                 distSD.append(distance_matrix[0,srcP])
 
-        print('NN Tour: ',cycle,'\nDistance: ',distSD)
+        print('NN cycle: ',cycle,'\nDistance: ',distSD)
         print('2-opt is Running ...')
         # improved tour based on 2-opt solution
         improved = True
@@ -106,10 +106,10 @@ class solAgent(Agent):
             improved = False
             for i in range(size - 3):  # cycle[0:size-3]:
                 for j in range(i + 2, size - 1):  # cycle[i+2:size-1]:
-                    gain = _cost.item((cycle[i], cycle[i + 1])) + \
-                           _cost.item((cycle[j], cycle[j + 1])) - \
-                           _cost.item((cycle[i], cycle[j])) - \
-                           _cost.item((cycle[i + 1], cycle[j + 1]))
+                    gain = _cost.item((tour.index(cycle[i]), tour.index(cycle[i + 1]))) + \
+                           _cost.item((tour.index(cycle[j]), tour.index(cycle[j + 1]))) - \
+                           _cost.item((tour.index(cycle[i]), tour.index(cycle[j]))) - \
+                           _cost.item((tour.index(cycle[i + 1]), tour.index(cycle[j + 1])))
 
                     if gain != np.inf and not np.isnan(gain) and gain > 1e-1:
                         best -= gain
