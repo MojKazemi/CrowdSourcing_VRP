@@ -20,30 +20,33 @@ class solAgent(Agent):
             "performace": []
         }
 
-    def distCalculate(self, deliveries):
+    def distCalculate(self, deliveries, points_group):
         #deliveries = self.env.get_delivery()
         if len(deliveries) == 0:
             return []
         points = [[0,0]]
         nodes =[0]
         for _, ele in deliveries.items():
-            points.append([ele['lat'], ele['lng']])
-            nodes.append(ele['id'])
+            for i in points_group:
+                if ele['id'] == i:
+                    points.append([ele['lat'], ele['lng']])
+                    nodes.append(ele['id'])
         dist_matrix = spatial.distance_matrix(points, points)
         remind_dist_matrix = dist_matrix.copy()
-        for i in nodes:
+        for i in range(len(nodes)):
             remind_dist_matrix[i, i] = np.inf
 
         return dist_matrix, remind_dist_matrix
 
-    def ClusterIndices(self, clustNum, labels_array):  # numpy
-        return np.where(labels_array == clustNum)[0]
+    def ClusterIndices(self, clustNum, labels_array,mainlist):  # numpy
+        output=[]
+        for i in np.where(labels_array == clustNum)[0]:
+            output.append(mainlist[i])
+        return output
 
     def clusterDeliveries(self,deliveries, n_vehicles):
         if len(deliveries) == 0:
             return []
-        if n_vehicles == 1:
-            return deliveries
         points = []
         delivery_points = []
         for _,ele in deliveries.items():
@@ -55,8 +58,8 @@ class solAgent(Agent):
         kmeans.fit(standard_points)
         tour={}
         for veh in range(n_vehicles):
-            tour[veh] = self.ClusterIndices(veh, kmeans.labels_)
-
+            tour[veh] = self.ClusterIndices(veh, kmeans.labels_,delivery_points)
+        return tour
 
     def swapPositions(self, slist, pos1, pos2):
 
@@ -71,25 +74,29 @@ class solAgent(Agent):
 
     def solTSP(self, tour):
         cycle = [0]
-        distance_matrix, remind_dist_matrix = self.distCalculate(self.env.get_delivery())
+        distance_matrix, remind_dist_matrix = self.distCalculate(self.env.get_delivery(), tour)
         _cost = remind_dist_matrix.copy()
         # print(distance_matrix,'\n',remind_dist_matrix)
         distSD = []
         # find NN tour in points
         print('-------------------- NN Solution --------------------------')
         srcP = 0
-        for i in range(len(tour)):
+        tour = [0] + tour
+        print('tour',tour)
+        for i in range(len(tour)-1):
             destP = np.argmin(remind_dist_matrix[srcP])
-            cycle.append(destP)
+            # print('s',srcP,'d',destP)
+            cycle.append(tour[destP])
             distSD.append(remind_dist_matrix[srcP].min())
             remind_dist_matrix[:, srcP] = np.inf
             srcP = destP
             i+=1
-            if i == len(tour):
+            if i == len(tour)-1:
+                # print('s',srcP,'d',0)
                 cycle.append(0)
                 distSD.append(distance_matrix[0,srcP])
 
-        print('NN Tour: ',cycle)#,'\nDistance: ',distSD)
+        print('NN Tour: ',cycle,'\nDistance: ',distSD)
         print('2-opt is Running ...')
         # improved tour based on 2-opt solution
         improved = True
@@ -119,12 +126,16 @@ class solAgent(Agent):
         self.n_deliveries = len(delivery_to_do)
         self.n_nodes = 1 + len(delivery_to_do)
 
-        self.clusterDeliveries(self.env.get_delivery(),self.n_vehicles)
+        points_groups = self.clusterDeliveries(self.env.get_delivery(),self.n_vehicles)
+        print('points_group: ', points_groups)
 
-        # For 1 vehicles - one tour
-        # self.distCalculate(self.env.get_delivery())
-        # cycle = self.solTSP(delivery_to_do)
+        cycle =[]
+        for tour in points_groups.values():
+            print(tour)
 
-        #For more than 1 vehicles
-        #TODO: make optimze batch
-        # return cycle
+            # dist_matrix = distCalculate(self.env.get_delivery(),tour)
+            opt_tour = self.solTSP(tour)
+            print(opt_tour)
+            cycle.append(opt_tour)
+        print(cycle)
+        return cycle

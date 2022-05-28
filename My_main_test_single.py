@@ -38,10 +38,10 @@ if __name__ == '__main__':
     end = time.time()
     comp_time = end - start
     print('Competition Time',comp_time)
-    VRP_solution=[]
-    VRP_solution.append(cycle)
-    print(VRP_solution)
-    env.render_tour(delivery_to_do, VRP_solution)
+    # VRP_solution=[]
+    # VRP_solution.append(cycle)
+    # print(VRP_solution)
+    env.render_tour(delivery_to_do, cycle)
 
 
 
