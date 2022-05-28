@@ -1,0 +1,5 @@
+id,lat,lng,item_vol,crowd_cost,p_failed,time_window_low,time_window_high
+1,0,1,9,5,0.4,0,20
+2,1,1,1,6,1.4,0,20
+3,1,0,9,7,2.4,0,20
+4,0.7,0.5,1,8,3.4,0,1
