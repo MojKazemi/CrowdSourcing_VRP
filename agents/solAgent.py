@@ -3,13 +3,10 @@ import os
 import time
 import numpy as np
 from agents import *
-import gurobipy as grb
 from scipy import spatial
 from sklearn.cluster import KMeans, DBSCAN
 from sklearn.preprocessing import StandardScaler
 from agents.distPoints import distPoints
-import matplotlib.pyplot as plt
-
 
 class solAgent(Agent):
 
@@ -166,6 +163,7 @@ class solAgent(Agent):
         # print('Final Decision: cycle: ', cycle, '\nDistance Matrix: ', distSD)
         print('------------------------------------------')
         return VRP_solution
+
     def changepoints(self, VRP_solution, numbVehicles):
         Without_fail_tour = [i for i in range(self.n_vehicles) if i != numbVehicles] # the list of tour without the tour with error
         # dist of point with center of other cluster

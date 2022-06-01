@@ -7327,3 +7327,61 @@ Model is infeasible
 Best objective -, best bound -, gap -
 
 User-callback calls 3765, time in user-callback 0.01 sec
+
+Gurobi 9.1.2 (linux64) logging started Wed Jun  1 00:54:15 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 588 rows, 467 columns and 2262 nonzeros
+Model fingerprint: 0x2fe994d2
+Variable types: 37 continuous, 430 integer (430 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-01, 1e+03]
+Presolve removed 429 rows and 174 columns
+Presolve time: 0.01s
+Presolved: 159 rows, 293 columns, 2006 nonzeros
+Variable types: 36 continuous, 257 integer (257 binary)
+
+Root relaxation: objective 1.516519e+01, 151 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.16519    0   17          -   15.16519      -     -    0s
+     0     0   16.68718    0   12          -   16.68718      -     -    0s
+     0     0   16.83268    0   17          -   16.83268      -     -    0s
+     0     0   16.83268    0   17          -   16.83268      -     -    0s
+     0     0   16.83268    0   17          -   16.83268      -     -    0s
+     0     2   17.10384    0   17          -   17.10384      -     -    0s
+*  493   139               9      27.7071117   17.49207  36.9%  14.9    0s
+* 1276   227              20      27.1079182   18.65466  31.2%  12.9    0s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 89
+  Implied bound: 29
+  Clique: 4
+  MIR: 13
+  GUB cover: 1
+  Inf proof: 6
+  RLT: 10
+  Relax-and-lift: 2
+  Lazy constraints: 21
+
+Explored 3272 nodes (36969 simplex iterations) in 1.28 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 27.1079 27.7071 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.710791817024e+01, best bound 2.710791817024e+01, gap 0.0000%
+
+User-callback calls 6948, time in user-callback 0.07 sec

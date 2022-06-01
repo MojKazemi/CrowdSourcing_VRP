@@ -1,62 +1,59 @@
-00:29:07 INFO: Academic license - for non-commercial use only - expires 2022-06-26
-00:29:07 INFO: Using license file /home/moj/gurobi.lic
-00:29:07 INFO: Parameter OutputFlag unchanged
-00:29:07 INFO:    Value: 1  Min: 0  Max: 1  Default: 1
-00:29:07 INFO: Changed value of parameter LogFile to ./logs/gurobi.log
-00:29:07 INFO:    Prev:   Default: 
-00:29:07 INFO: Warning: constraint name "exit time" has a space
-00:29:07 INFO: Changed value of parameter lazyConstraints to 1
-00:29:07 INFO:    Prev: 0  Min: 0  Max: 1  Default: 0
-00:29:07 INFO: Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
-00:29:07 INFO: Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
-00:29:07 INFO: Optimize a model with 559 rows, 416 columns and 2019 nonzeros
-00:29:07 INFO: Model fingerprint: 0x44ec7ee9
-00:29:07 INFO: Variable types: 31 continuous, 385 integer (385 binary)
-00:29:07 INFO: Coefficient statistics:
-00:29:07 INFO:   Matrix range     [1e+00, 1e+03]
-00:29:07 INFO:   Objective range  [3e-01, 1e+01]
-00:29:07 INFO:   Bounds range     [1e+00, 1e+00]
-00:29:07 INFO:   RHS range        [8e-01, 1e+03]
-00:29:07 INFO: Presolve removed 411 rows and 185 columns
-00:29:07 INFO: Presolve time: 0.07s
-00:29:07 INFO: Presolved: 148 rows, 231 columns, 1806 nonzeros
-00:29:07 INFO: Variable types: 30 continuous, 201 integer (201 binary)
-00:29:07 INFO: 
-00:29:07 INFO: Root relaxation: objective 1.987473e+01, 154 iterations, 0.01 seconds
-00:29:07 INFO: 
-00:29:07 INFO:     Nodes    |    Current Node    |     Objective Bounds      |     Work
-00:29:07 INFO:  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-00:29:07 INFO: 
-00:29:07 INFO:      0     0   19.87473    0   29          -   19.87473      -     -    0s
-00:29:07 INFO:      0     0   29.58595    0   30          -   29.58595      -     -    0s
-00:29:07 INFO:      0     0   29.69597    0   34          -   29.69597      -     -    0s
-00:29:07 INFO:      0     0   29.70354    0   37          -   29.70354      -     -    0s
-00:29:07 INFO:      0     0   29.70354    0   37          -   29.70354      -     -    0s
-00:29:07 INFO:      0     0   29.92154    0   36          -   29.92154      -     -    0s
-00:29:07 INFO:      0     0   29.95048    0   36          -   29.95048      -     -    0s
-00:29:07 INFO:      0     0   29.95048    0   36          -   29.95048      -     -    0s
-00:29:07 INFO:      0     0   29.95048    0   36          -   29.95048      -     -    0s
-00:29:07 INFO:      0     0   29.95048    0   36          -   29.95048      -     -    0s
-00:29:07 INFO:      0     0   29.95048    0   24          -   29.95048      -     -    0s
-00:29:07 INFO:      0     2   30.03214    0   24          -   30.03214      -     -    0s
-00:29:07 INFO: 
-00:29:07 INFO: Cutting planes:
-00:29:07 INFO:   Learned: 1
-00:29:07 INFO:   Gomory: 2
-00:29:07 INFO:   Cover: 1
-00:29:07 INFO:   Implied bound: 3
-00:29:07 INFO:   Clique: 1
-00:29:07 INFO:   MIR: 7
-00:29:07 INFO:   StrongCG: 1
-00:29:07 INFO:   GUB cover: 3
-00:29:07 INFO:   RLT: 12
-00:29:07 INFO: 
-00:29:07 INFO: Explored 1765 nodes (11950 simplex iterations) in 0.57 seconds
-00:29:07 INFO: Thread count was 4 (of 4 available processors)
-00:29:07 INFO: 
-00:29:07 INFO: Solution count 0
-00:29:07 INFO: 
-00:29:07 INFO: Model is infeasible
-00:29:07 INFO: Best objective -, best bound -, gap -
-00:29:07 INFO: 
-00:29:07 INFO: User-callback calls 3765, time in user-callback 0.01 sec
+00:54:15 INFO: Academic license - for non-commercial use only - expires 2022-06-26
+00:54:15 INFO: Using license file /home/moj/gurobi.lic
+00:54:15 INFO: Parameter OutputFlag unchanged
+00:54:15 INFO:    Value: 1  Min: 0  Max: 1  Default: 1
+00:54:15 INFO: Changed value of parameter LogFile to ./logs/gurobi.log
+00:54:15 INFO:    Prev:   Default: 
+00:54:15 INFO: Warning: constraint name "exit time" has a space
+00:54:15 INFO: Changed value of parameter lazyConstraints to 1
+00:54:15 INFO:    Prev: 0  Min: 0  Max: 1  Default: 0
+00:54:15 INFO: Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+00:54:15 INFO: Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+00:54:15 INFO: Optimize a model with 588 rows, 467 columns and 2262 nonzeros
+00:54:15 INFO: Model fingerprint: 0x2fe994d2
+00:54:15 INFO: Variable types: 37 continuous, 430 integer (430 binary)
+00:54:15 INFO: Coefficient statistics:
+00:54:15 INFO:   Matrix range     [1e+00, 1e+03]
+00:54:15 INFO:   Objective range  [3e-01, 1e+01]
+00:54:15 INFO:   Bounds range     [1e+00, 1e+00]
+00:54:15 INFO:   RHS range        [7e-01, 1e+03]
+00:54:15 INFO: Presolve removed 429 rows and 174 columns
+00:54:15 INFO: Presolve time: 0.01s
+00:54:15 INFO: Presolved: 159 rows, 293 columns, 2006 nonzeros
+00:54:15 INFO: Variable types: 36 continuous, 257 integer (257 binary)
+00:54:15 INFO: 
+00:54:15 INFO: Root relaxation: objective 1.516519e+01, 151 iterations, 0.00 seconds
+00:54:15 INFO: 
+00:54:15 INFO:     Nodes    |    Current Node    |     Objective Bounds      |     Work
+00:54:15 INFO:  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+00:54:15 INFO: 
+00:54:15 INFO:      0     0   15.16519    0   17          -   15.16519      -     -    0s
+00:54:15 INFO:      0     0   16.68718    0   12          -   16.68718      -     -    0s
+00:54:15 INFO:      0     0   16.83268    0   17          -   16.83268      -     -    0s
+00:54:15 INFO:      0     0   16.83268    0   17          -   16.83268      -     -    0s
+00:54:15 INFO:      0     0   16.83268    0   17          -   16.83268      -     -    0s
+00:54:15 INFO:      0     2   17.10384    0   17          -   17.10384      -     -    0s
+00:54:16 INFO: *  493   139               9      27.7071117   17.49207  36.9%  14.9    0s
+00:54:16 INFO: * 1276   227              20      27.1079182   18.65466  31.2%  12.9    0s
+00:54:17 INFO: 
+00:54:17 INFO: Cutting planes:
+00:54:17 INFO:   Gomory: 2
+00:54:17 INFO:   Cover: 89
+00:54:17 INFO:   Implied bound: 29
+00:54:17 INFO:   Clique: 4
+00:54:17 INFO:   MIR: 13
+00:54:17 INFO:   GUB cover: 1
+00:54:17 INFO:   Inf proof: 6
+00:54:17 INFO:   RLT: 10
+00:54:17 INFO:   Relax-and-lift: 2
+00:54:17 INFO:   Lazy constraints: 21
+00:54:17 INFO: 
+00:54:17 INFO: Explored 3272 nodes (36969 simplex iterations) in 1.28 seconds
+00:54:17 INFO: Thread count was 4 (of 4 available processors)
+00:54:17 INFO: 
+00:54:17 INFO: Solution count 2: 27.1079 27.7071 
+00:54:17 INFO: 
+00:54:17 INFO: Optimal solution found (tolerance 1.00e-04)
+00:54:17 INFO: Best objective 2.710791817024e+01, best bound 2.710791817024e+01, gap 0.0000%
+00:54:17 INFO: 
+00:54:17 INFO: User-callback calls 6948, time in user-callback 0.07 sec
