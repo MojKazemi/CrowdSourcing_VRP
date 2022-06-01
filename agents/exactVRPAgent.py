@@ -32,7 +32,7 @@ class ExactVRPAgent(Agent):
         for i in range(len(distance_matrix[0, :])):
             if distance_matrix[0, i] > threshold:
                 id_to_crowdship.append(i)
-
+        print('id to crowdship',id_to_crowdship)
         return id_to_crowdship 
 
     def compute_VRP(self, delivery_to_do, vehicles_dict, gap=None, time_limit=None, verbose=False, debug_model=False):

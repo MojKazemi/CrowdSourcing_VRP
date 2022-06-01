@@ -6398,3 +6398,932 @@ Optimal solution found (tolerance 1.00e-04)
 Best objective 2.770711167704e+01, best bound 2.770711167704e+01, gap 0.0000%
 
 User-callback calls 2352, time in user-callback 0.03 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 11:23:22 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 7009 rows, 5246 columns and 28449 nonzeros
+Model fingerprint: 0xb668bb55
+Variable types: 121 continuous, 5125 integer (5125 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-02, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e-01, 1e+03]
+Presolve removed 3328 rows and 1924 columns
+Presolve time: 0.24s
+Presolved: 3681 rows, 3322 columns, 17468 nonzeros
+Variable types: 120 continuous, 3202 integer (3202 binary)
+
+Root relaxation: objective 2.846017e+01, 2554 iterations, 0.26 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   28.46017    0  429          -   28.46017      -     -    0s
+     0     0 infeasible    0               - infeasible      -     -    1s
+
+Cutting planes:
+  Learned: 4
+  Gomory: 5
+  Cover: 3
+  Implied bound: 18
+  Clique: 55
+  MIR: 131
+  GUB cover: 1
+  Zero half: 29
+  RLT: 140
+  Relax-and-lift: 26
+
+Explored 1 nodes (5785 simplex iterations) in 1.28 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 350, time in user-callback 0.00 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 11:23:41 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 468 rows, 348 columns and 1665 nonzeros
+Model fingerprint: 0x110d93c0
+Variable types: 28 continuous, 320 integer (320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-01, 1e+03]
+Presolve removed 338 rows and 147 columns
+Presolve time: 0.01s
+Presolved: 130 rows, 201 columns, 1375 nonzeros
+Variable types: 27 continuous, 174 integer (174 binary)
+
+Root relaxation: objective 1.516519e+01, 146 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.16519    0   17          -   15.16519      -     -    0s
+     0     0   15.59157    0   23          -   15.59157      -     -    0s
+     0     0   16.71008    0   19          -   16.71008      -     -    0s
+     0     0   16.77262    0   22          -   16.77262      -     -    0s
+     0     0   16.82842    0    6          -   16.82842      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     2   17.12047    0   19          -   17.12047      -     -    0s
+*  329   126              12      30.2468746   17.65066  41.6%  12.2    0s
+*  381   120              13      27.8387729   17.74363  36.3%  11.9    0s
+*  408   101               8      27.7071117   17.76834  35.9%  11.9    0s
+
+Cutting planes:
+  Cover: 23
+  Implied bound: 19
+  Clique: 3
+  MIR: 18
+  StrongCG: 3
+  GUB cover: 2
+  Inf proof: 1
+  RLT: 13
+  Relax-and-lift: 1
+  Lazy constraints: 16
+
+Explored 1052 nodes (12614 simplex iterations) in 0.45 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 27.7071 27.8388 30.2469 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.770711167704e+01, best bound 2.770711167704e+01, gap 0.0000%
+
+User-callback calls 2342, time in user-callback 0.03 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 11:24:15 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 468 rows, 348 columns and 1665 nonzeros
+Model fingerprint: 0x110d93c0
+Variable types: 28 continuous, 320 integer (320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-01, 1e+03]
+Presolve removed 338 rows and 147 columns
+Presolve time: 0.01s
+Presolved: 130 rows, 201 columns, 1375 nonzeros
+Variable types: 27 continuous, 174 integer (174 binary)
+
+Root relaxation: objective 1.516519e+01, 146 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.16519    0   17          -   15.16519      -     -    0s
+     0     0   15.59157    0   23          -   15.59157      -     -    0s
+     0     0   16.71008    0   19          -   16.71008      -     -    0s
+     0     0   16.77262    0   22          -   16.77262      -     -    0s
+     0     0   16.82842    0    6          -   16.82842      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     2   17.12047    0   19          -   17.12047      -     -    0s
+*  329   126              12      30.2468746   17.65066  41.6%  12.2    0s
+*  381   120              13      27.8387729   17.74363  36.3%  11.9    0s
+*  408   101               8      27.7071117   17.76834  35.9%  11.9    0s
+
+Cutting planes:
+  Cover: 23
+  Implied bound: 19
+  Clique: 3
+  MIR: 18
+  StrongCG: 3
+  GUB cover: 2
+  Inf proof: 1
+  RLT: 13
+  Relax-and-lift: 1
+  Lazy constraints: 16
+
+Explored 1052 nodes (12614 simplex iterations) in 0.45 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 27.7071 27.8388 30.2469 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.770711167704e+01, best bound 2.770711167704e+01, gap 0.0000%
+
+User-callback calls 2343, time in user-callback 0.01 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 11:31:41 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 880 rows, 656 columns and 3285 nonzeros
+Model fingerprint: 0xcac8f880
+Variable types: 40 continuous, 616 integer (616 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 1e+03]
+Presolve removed 669 rows and 322 columns
+Presolve time: 0.02s
+Presolved: 211 rows, 334 columns, 2631 nonzeros
+Variable types: 39 continuous, 295 integer (295 binary)
+
+Root relaxation: objective 2.685326e+01, 196 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   26.85326    0   69          -   26.85326      -     -    0s
+     0     0   31.61468    0   62          -   31.61468      -     -    0s
+     0     0   34.16293    0   14          -   34.16293      -     -    0s
+     0     0   34.16293    0   14          -   34.16293      -     -    0s
+     0     0   34.53685    0   56          -   34.53685      -     -    0s
+     0     0   34.86877    0   47          -   34.86877      -     -    0s
+     0     0   34.89572    0   50          -   34.89572      -     -    0s
+     0     0   34.89572    0   50          -   34.89572      -     -    0s
+     0     0   35.21306    0   34          -   35.21306      -     -    0s
+     0     0   35.21306    0   26          -   35.21306      -     -    0s
+     0     0   35.21306    0   33          -   35.21306      -     -    0s
+     0     0   35.21306    0   33          -   35.21306      -     -    0s
+     0     2   35.26207    0   30          -   35.26207      -     -    0s
+
+Cutting planes:
+  Gomory: 3
+  Cover: 1
+  Implied bound: 7
+  Clique: 4
+  MIR: 7
+  GUB cover: 2
+  Zero half: 3
+  RLT: 21
+  Relax-and-lift: 1
+
+Explored 818 nodes (7367 simplex iterations) in 0.44 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 1902, time in user-callback 0.00 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 11:32:18 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 765 rows, 570 columns and 2829 nonzeros
+Model fingerprint: 0x114559d5
+Variable types: 37 continuous, 533 integer (533 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 1e+03]
+Presolve removed 564 rows and 249 columns
+Presolve time: 0.02s
+Presolved: 201 rows, 321 columns, 2794 nonzeros
+Variable types: 36 continuous, 285 integer (285 binary)
+
+Root relaxation: objective 2.121029e+01, 216 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   21.21029    0   66          -   21.21029      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.70671    0   49          -   30.70671      -     -    0s
+     0     0   30.80847    0   41          -   30.80847      -     -    0s
+     0     0   30.88901    0   48          -   30.88901      -     -    0s
+     0     0   30.89808    0   46          -   30.89808      -     -    0s
+     0     0   30.89808    0   51          -   30.89808      -     -    0s
+     0     0   31.09218    0   57          -   31.09218      -     -    0s
+     0     0   31.09840    0   58          -   31.09840      -     -    0s
+     0     0   31.20162    0   40          -   31.20162      -     -    0s
+     0     0   31.21825    0   36          -   31.21825      -     -    0s
+     0     0   31.22093    0   36          -   31.22093      -     -    0s
+     0     0   31.22093    0   35          -   31.22093      -     -    0s
+     0     0   31.22093    0   37          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   33          -   31.22439      -     -    0s
+     0     0   31.22439    0   28          -   31.22439      -     -    0s
+     0     2   31.35713    0   20          -   31.35713      -     -    0s
+*  492   130               6      32.6462681   31.90190  2.28%  14.4    0s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 2
+  Implied bound: 6
+  Clique: 2
+  MIR: 14
+  StrongCG: 1
+  GUB cover: 1
+  Mod-K: 1
+  RLT: 23
+  Relax-and-lift: 3
+  Lazy constraints: 5
+
+Explored 669 nodes (9735 simplex iterations) in 0.57 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 32.6463 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.264626810003e+01, best bound 3.264626810003e+01, gap 0.0000%
+
+User-callback calls 1713, time in user-callback 0.01 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 11:37:10 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 765 rows, 570 columns and 2829 nonzeros
+Model fingerprint: 0x114559d5
+Variable types: 37 continuous, 533 integer (533 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 1e+03]
+Presolve removed 564 rows and 249 columns
+Presolve time: 0.02s
+Presolved: 201 rows, 321 columns, 2794 nonzeros
+Variable types: 36 continuous, 285 integer (285 binary)
+
+Root relaxation: objective 2.121029e+01, 216 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   21.21029    0   66          -   21.21029      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.70671    0   49          -   30.70671      -     -    0s
+     0     0   30.80847    0   41          -   30.80847      -     -    0s
+     0     0   30.88901    0   48          -   30.88901      -     -    0s
+     0     0   30.89808    0   46          -   30.89808      -     -    0s
+     0     0   30.89808    0   51          -   30.89808      -     -    0s
+     0     0   31.09218    0   57          -   31.09218      -     -    0s
+     0     0   31.09840    0   58          -   31.09840      -     -    0s
+     0     0   31.20162    0   40          -   31.20162      -     -    0s
+     0     0   31.21825    0   36          -   31.21825      -     -    0s
+     0     0   31.22093    0   36          -   31.22093      -     -    0s
+     0     0   31.22093    0   35          -   31.22093      -     -    0s
+     0     0   31.22093    0   37          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   33          -   31.22439      -     -    0s
+     0     0   31.22439    0   28          -   31.22439      -     -    0s
+     0     2   31.35713    0   20          -   31.35713      -     -    0s
+*  492   130               6      32.6462681   31.90190  2.28%  14.4    0s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 2
+  Implied bound: 6
+  Clique: 2
+  MIR: 14
+  StrongCG: 1
+  GUB cover: 1
+  Mod-K: 1
+  RLT: 23
+  Relax-and-lift: 3
+  Lazy constraints: 5
+
+Explored 669 nodes (9735 simplex iterations) in 0.55 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 32.6463 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.264626810003e+01, best bound 3.264626810003e+01, gap 0.0000%
+
+User-callback calls 1709, time in user-callback 0.01 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 11:47:28 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 765 rows, 570 columns and 2829 nonzeros
+Model fingerprint: 0x114559d5
+Variable types: 37 continuous, 533 integer (533 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 1e+03]
+Presolve removed 564 rows and 249 columns
+Presolve time: 0.02s
+Presolved: 201 rows, 321 columns, 2794 nonzeros
+Variable types: 36 continuous, 285 integer (285 binary)
+
+Root relaxation: objective 2.121029e+01, 216 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   21.21029    0   66          -   21.21029      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.70671    0   49          -   30.70671      -     -    0s
+     0     0   30.80847    0   41          -   30.80847      -     -    0s
+     0     0   30.88901    0   48          -   30.88901      -     -    0s
+     0     0   30.89808    0   46          -   30.89808      -     -    0s
+     0     0   30.89808    0   51          -   30.89808      -     -    0s
+     0     0   31.09218    0   57          -   31.09218      -     -    0s
+     0     0   31.09840    0   58          -   31.09840      -     -    0s
+     0     0   31.20162    0   40          -   31.20162      -     -    0s
+     0     0   31.21825    0   36          -   31.21825      -     -    0s
+     0     0   31.22093    0   36          -   31.22093      -     -    0s
+     0     0   31.22093    0   35          -   31.22093      -     -    0s
+     0     0   31.22093    0   37          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   33          -   31.22439      -     -    0s
+     0     0   31.22439    0   28          -   31.22439      -     -    0s
+     0     2   31.35713    0   20          -   31.35713      -     -    0s
+*  492   130               6      32.6462681   31.90190  2.28%  14.4    0s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 2
+  Implied bound: 6
+  Clique: 2
+  MIR: 14
+  StrongCG: 1
+  GUB cover: 1
+  Mod-K: 1
+  RLT: 23
+  Relax-and-lift: 3
+  Lazy constraints: 5
+
+Explored 669 nodes (9735 simplex iterations) in 0.55 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 32.6463 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.264626810003e+01, best bound 3.264626810003e+01, gap 0.0000%
+
+User-callback calls 1715, time in user-callback 0.01 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 12:27:36 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 765 rows, 570 columns and 2829 nonzeros
+Model fingerprint: 0x114559d5
+Variable types: 37 continuous, 533 integer (533 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 1e+03]
+Presolve removed 564 rows and 249 columns
+Presolve time: 0.02s
+Presolved: 201 rows, 321 columns, 2794 nonzeros
+Variable types: 36 continuous, 285 integer (285 binary)
+
+Root relaxation: objective 2.121029e+01, 216 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   21.21029    0   66          -   21.21029      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.70671    0   49          -   30.70671      -     -    0s
+     0     0   30.80847    0   41          -   30.80847      -     -    0s
+     0     0   30.88901    0   48          -   30.88901      -     -    0s
+     0     0   30.89808    0   46          -   30.89808      -     -    0s
+     0     0   30.89808    0   51          -   30.89808      -     -    0s
+     0     0   31.09218    0   57          -   31.09218      -     -    0s
+     0     0   31.09840    0   58          -   31.09840      -     -    0s
+     0     0   31.20162    0   40          -   31.20162      -     -    0s
+     0     0   31.21825    0   36          -   31.21825      -     -    0s
+     0     0   31.22093    0   36          -   31.22093      -     -    0s
+     0     0   31.22093    0   35          -   31.22093      -     -    0s
+     0     0   31.22093    0   37          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   33          -   31.22439      -     -    0s
+     0     0   31.22439    0   28          -   31.22439      -     -    0s
+     0     2   31.35713    0   20          -   31.35713      -     -    0s
+*  492   130               6      32.6462681   31.90190  2.28%  14.4    0s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 2
+  Implied bound: 6
+  Clique: 2
+  MIR: 14
+  StrongCG: 1
+  GUB cover: 1
+  Mod-K: 1
+  RLT: 23
+  Relax-and-lift: 3
+  Lazy constraints: 5
+
+Explored 669 nodes (9735 simplex iterations) in 0.57 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 32.6463 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.264626810003e+01, best bound 3.264626810003e+01, gap 0.0000%
+
+User-callback calls 1706, time in user-callback 0.01 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 12:27:42 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 765 rows, 570 columns and 2829 nonzeros
+Model fingerprint: 0x114559d5
+Variable types: 37 continuous, 533 integer (533 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 1e+03]
+Presolve removed 564 rows and 249 columns
+Presolve time: 0.02s
+Presolved: 201 rows, 321 columns, 2794 nonzeros
+Variable types: 36 continuous, 285 integer (285 binary)
+
+Root relaxation: objective 2.121029e+01, 216 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   21.21029    0   66          -   21.21029      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.53416    0   37          -   30.53416      -     -    0s
+     0     0   30.70671    0   49          -   30.70671      -     -    0s
+     0     0   30.80847    0   41          -   30.80847      -     -    0s
+     0     0   30.88901    0   48          -   30.88901      -     -    0s
+     0     0   30.89808    0   46          -   30.89808      -     -    0s
+     0     0   30.89808    0   51          -   30.89808      -     -    0s
+     0     0   31.09218    0   57          -   31.09218      -     -    0s
+     0     0   31.09840    0   58          -   31.09840      -     -    0s
+     0     0   31.20162    0   40          -   31.20162      -     -    0s
+     0     0   31.21825    0   36          -   31.21825      -     -    0s
+     0     0   31.22093    0   36          -   31.22093      -     -    0s
+     0     0   31.22093    0   35          -   31.22093      -     -    0s
+     0     0   31.22093    0   37          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22093    0   27          -   31.22093      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   18          -   31.22439      -     -    0s
+     0     0   31.22439    0   33          -   31.22439      -     -    0s
+     0     0   31.22439    0   28          -   31.22439      -     -    0s
+     0     2   31.35713    0   20          -   31.35713      -     -    0s
+*  492   130               6      32.6462681   31.90190  2.28%  14.4    0s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 2
+  Implied bound: 6
+  Clique: 2
+  MIR: 14
+  StrongCG: 1
+  GUB cover: 1
+  Mod-K: 1
+  RLT: 23
+  Relax-and-lift: 3
+  Lazy constraints: 5
+
+Explored 669 nodes (9735 simplex iterations) in 0.53 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 32.6463 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.264626810003e+01, best bound 3.264626810003e+01, gap 0.0000%
+
+User-callback calls 1704, time in user-callback 0.01 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 20:36:04 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 468 rows, 348 columns and 1665 nonzeros
+Model fingerprint: 0x110d93c0
+Variable types: 28 continuous, 320 integer (320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-01, 1e+03]
+Presolve removed 338 rows and 147 columns
+Presolve time: 0.07s
+Presolved: 130 rows, 201 columns, 1375 nonzeros
+Variable types: 27 continuous, 174 integer (174 binary)
+
+Root relaxation: objective 1.516519e+01, 146 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.16519    0   17          -   15.16519      -     -    0s
+     0     0   15.59157    0   23          -   15.59157      -     -    0s
+     0     0   16.71008    0   19          -   16.71008      -     -    0s
+     0     0   16.77262    0   22          -   16.77262      -     -    0s
+     0     0   16.82842    0    6          -   16.82842      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     2   17.12047    0   19          -   17.12047      -     -    0s
+*  329   126              12      30.2468746   17.65066  41.6%  12.2    0s
+*  381   120              13      27.8387729   17.74363  36.3%  11.9    0s
+*  408   101               8      27.7071117   17.76834  35.9%  11.9    0s
+
+Cutting planes:
+  Cover: 23
+  Implied bound: 19
+  Clique: 3
+  MIR: 18
+  StrongCG: 3
+  GUB cover: 2
+  Inf proof: 1
+  RLT: 13
+  Relax-and-lift: 1
+  Lazy constraints: 16
+
+Explored 1052 nodes (12614 simplex iterations) in 0.61 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 27.7071 27.8388 30.2469 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.770711167704e+01, best bound 2.770711167704e+01, gap 0.0000%
+
+User-callback calls 2352, time in user-callback 0.03 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 20:44:09 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 468 rows, 348 columns and 1665 nonzeros
+Model fingerprint: 0x110d93c0
+Variable types: 28 continuous, 320 integer (320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-01, 1e+03]
+Presolve removed 338 rows and 147 columns
+Presolve time: 0.01s
+Presolved: 130 rows, 201 columns, 1375 nonzeros
+Variable types: 27 continuous, 174 integer (174 binary)
+
+Root relaxation: objective 1.516519e+01, 146 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.16519    0   17          -   15.16519      -     -    0s
+     0     0   15.59157    0   23          -   15.59157      -     -    0s
+     0     0   16.71008    0   19          -   16.71008      -     -    0s
+     0     0   16.77262    0   22          -   16.77262      -     -    0s
+     0     0   16.82842    0    6          -   16.82842      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     2   17.12047    0   19          -   17.12047      -     -    0s
+*  329   126              12      30.2468746   17.65066  41.6%  12.2    0s
+*  381   120              13      27.8387729   17.74363  36.3%  11.9    0s
+*  408   101               8      27.7071117   17.76834  35.9%  11.9    0s
+
+Cutting planes:
+  Cover: 23
+  Implied bound: 19
+  Clique: 3
+  MIR: 18
+  StrongCG: 3
+  GUB cover: 2
+  Inf proof: 1
+  RLT: 13
+  Relax-and-lift: 1
+  Lazy constraints: 16
+
+Explored 1052 nodes (12614 simplex iterations) in 0.42 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 27.7071 27.8388 30.2469 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.770711167704e+01, best bound 2.770711167704e+01, gap 0.0000%
+
+User-callback calls 2351, time in user-callback 0.01 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 20:53:01 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 468 rows, 348 columns and 1665 nonzeros
+Model fingerprint: 0x110d93c0
+Variable types: 28 continuous, 320 integer (320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-01, 1e+03]
+Presolve removed 338 rows and 147 columns
+Presolve time: 0.01s
+Presolved: 130 rows, 201 columns, 1375 nonzeros
+Variable types: 27 continuous, 174 integer (174 binary)
+
+Root relaxation: objective 1.516519e+01, 146 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.16519    0   17          -   15.16519      -     -    0s
+     0     0   15.59157    0   23          -   15.59157      -     -    0s
+     0     0   16.71008    0   19          -   16.71008      -     -    0s
+     0     0   16.77262    0   22          -   16.77262      -     -    0s
+     0     0   16.82842    0    6          -   16.82842      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     2   17.12047    0   19          -   17.12047      -     -    0s
+*  329   126              12      30.2468746   17.65066  41.6%  12.2    0s
+*  381   120              13      27.8387729   17.74363  36.3%  11.9    0s
+*  408   101               8      27.7071117   17.76834  35.9%  11.9    0s
+
+Cutting planes:
+  Cover: 23
+  Implied bound: 19
+  Clique: 3
+  MIR: 18
+  StrongCG: 3
+  GUB cover: 2
+  Inf proof: 1
+  RLT: 13
+  Relax-and-lift: 1
+  Lazy constraints: 16
+
+Explored 1052 nodes (12614 simplex iterations) in 0.38 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 27.7071 27.8388 30.2469 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.770711167704e+01, best bound 2.770711167704e+01, gap 0.0000%
+
+User-callback calls 2337, time in user-callback 0.01 sec
+
+Gurobi 9.1.2 (linux64) logging started Mon May 30 21:41:23 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 468 rows, 348 columns and 1665 nonzeros
+Model fingerprint: 0x110d93c0
+Variable types: 28 continuous, 320 integer (320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-01, 1e+03]
+Presolve removed 338 rows and 147 columns
+Presolve time: 0.02s
+Presolved: 130 rows, 201 columns, 1375 nonzeros
+Variable types: 27 continuous, 174 integer (174 binary)
+
+Root relaxation: objective 1.516519e+01, 146 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.16519    0   17          -   15.16519      -     -    0s
+     0     0   15.59157    0   23          -   15.59157      -     -    0s
+     0     0   16.71008    0   19          -   16.71008      -     -    0s
+     0     0   16.77262    0   22          -   16.77262      -     -    0s
+     0     0   16.82842    0    6          -   16.82842      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.89316    0   19          -   16.89316      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     0   16.90657    0   19          -   16.90657      -     -    0s
+     0     2   17.12047    0   19          -   17.12047      -     -    0s
+*  329   126              12      30.2468746   17.65066  41.6%  12.2    0s
+*  381   120              13      27.8387729   17.74363  36.3%  11.9    0s
+*  408   101               8      27.7071117   17.76834  35.9%  11.9    0s
+
+Cutting planes:
+  Cover: 23
+  Implied bound: 19
+  Clique: 3
+  MIR: 18
+  StrongCG: 3
+  GUB cover: 2
+  Inf proof: 1
+  RLT: 13
+  Relax-and-lift: 1
+  Lazy constraints: 16
+
+Explored 1052 nodes (12614 simplex iterations) in 0.56 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 27.7071 27.8388 30.2469 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.770711167704e+01, best bound 2.770711167704e+01, gap 0.0000%
+
+User-callback calls 2382, time in user-callback 0.02 sec
+
+Gurobi 9.1.2 (linux64) logging started Wed Jun  1 00:29:07 2022
+
+Changed value of parameter LogFile to ./logs/gurobi.log
+   Prev:   Default: 
+Warning: constraint name "exit time" has a space
+Changed value of parameter lazyConstraints to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 559 rows, 416 columns and 2019 nonzeros
+Model fingerprint: 0x44ec7ee9
+Variable types: 31 continuous, 385 integer (385 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [8e-01, 1e+03]
+Presolve removed 411 rows and 185 columns
+Presolve time: 0.07s
+Presolved: 148 rows, 231 columns, 1806 nonzeros
+Variable types: 30 continuous, 201 integer (201 binary)
+
+Root relaxation: objective 1.987473e+01, 154 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   19.87473    0   29          -   19.87473      -     -    0s
+     0     0   29.58595    0   30          -   29.58595      -     -    0s
+     0     0   29.69597    0   34          -   29.69597      -     -    0s
+     0     0   29.70354    0   37          -   29.70354      -     -    0s
+     0     0   29.70354    0   37          -   29.70354      -     -    0s
+     0     0   29.92154    0   36          -   29.92154      -     -    0s
+     0     0   29.95048    0   36          -   29.95048      -     -    0s
+     0     0   29.95048    0   36          -   29.95048      -     -    0s
+     0     0   29.95048    0   36          -   29.95048      -     -    0s
+     0     0   29.95048    0   36          -   29.95048      -     -    0s
+     0     0   29.95048    0   24          -   29.95048      -     -    0s
+     0     2   30.03214    0   24          -   30.03214      -     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 2
+  Cover: 1
+  Implied bound: 3
+  Clique: 1
+  MIR: 7
+  StrongCG: 1
+  GUB cover: 3
+  RLT: 12
+
+Explored 1765 nodes (11950 simplex iterations) in 0.57 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 3765, time in user-callback 0.01 sec

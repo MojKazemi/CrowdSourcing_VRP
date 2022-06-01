@@ -7,7 +7,6 @@ import gurobipy as grb
 from scipy import spatial
 from sklearn.cluster import KMeans, DBSCAN
 from sklearn.preprocessing import StandardScaler
-from agents.distPoints import distPoints
 import matplotlib.pyplot as plt
 
 
@@ -21,9 +20,9 @@ class solAgent(Agent):
             "quantile": [],
             "performace": []
         }
-        self.Point_w_min_dist = []
 
     def distCalculate(self, deliveries, points_group):
+
         #deliveries = self.env.get_delivery()
         if len(deliveries) == 0:
             return []
@@ -34,6 +33,17 @@ class solAgent(Agent):
                 if ele['id'] == i:
                     points.append([ele['lat'], ele['lng']])
                     nodes.append(ele['id'])
+
+        # for _, ele in deliveries.items():
+        #     points.append([ele['lat'], ele['lng']])
+        #     nodes.append(ele['id'])
+
+        # print(points[0],'\n', nodes)
+        # arcos = {(i, j) for i in nodes for j in nodes if i != j}
+        # print(arcos)
+        # dist_dict = {(i, j): np.hypot(points[i][0] - points[j][0], points[i][1] - points[j][1])
+        #              for i in nodes for j in nodes if i != j}
+        # print('arcs:\n', arcos, '\arcs and dist:\n', dist_dict)
         dist_matrix = spatial.distance_matrix(points, points)
         remind_dist_matrix = dist_matrix.copy()
         for i in range(len(nodes)):
@@ -102,15 +112,11 @@ class solAgent(Agent):
     def nearestneieghbor(self,pointd_groups):
         VRP_Solution = []
         distSD_list = []
-        _cost  = []
         print(pointd_groups)
         for tour in pointd_groups.values():
             cycle = [0]
             distance_matrix, remind_dist_matrix = self.distCalculate(self.env.get_delivery(), tour)
-            print(tour)
-            print(distance_matrix)
-            __cost = remind_dist_matrix.copy()
-            _cost.append(__cost)
+            _cost = remind_dist_matrix.copy()
             # print(distance_matrix,'\n',remind_dist_matrix)
             distSD = []
             # find NN tour in points
@@ -137,12 +143,13 @@ class solAgent(Agent):
             print('NN cycle: ', cycle, '\nDistance: ', distSD)
         return VRP_Solution, distSD_list, _cost
 
-    def swap2opt(self, tour, dist_dict, iteration):
-        VRP_solution = []
+    def swap2opt(self, tour, iteration):
         cycle_list, distSD_list, _cost = self.nearestneieghbor(tour)
         print('2-opt is Running ...')
         # improved tour based on 2-opt solution
         for cycle in cycle_list:
+            pointIDs = cycle.remove(0)
+            delivery_info = self.env.get_delivery()
             improved = True
             ite = 0
             while improved and ite < iteration:
@@ -152,45 +159,47 @@ class solAgent(Agent):
                 size = len(cycle)
                 improved = False
                 for i in range(size - 3):  # cycle[0:size-3]:
-                    for j in range(i + 2, size - 2):  # cycle[i+2:size-1]:
-                        gain = dist_dict[(cycle[i], cycle[i+1])] + \
-                               dist_dict[(cycle[j],cycle[j+1])] - \
-                               dist_dict[(cycle[i], cycle[j])] - \
-                               dist_dict[(cycle[i+1], cycle[j+1])]
+                    for j in range(i + 2, size - 1):  # cycle[i+2:size-1]:
+                        # swap_tour = self.swapPositions
+                        gain = _cost.item((tour.index(cycle[i]), tour.index(cycle[i + 1]))) + \
+                               _cost.item((tour.index(cycle[j]), tour.index(cycle[j + 1]))) - \
+                               _cost.item((tour.index(cycle[i]), tour.index(cycle[j]))) - \
+                               _cost.item((tour.index(cycle[i + 1]), tour.index(cycle[j + 1])))
+
                         if gain != np.inf and not np.isnan(gain) and gain > 1e-1:
-                            best -= gain
-                            cycle = self.swapPositions(cycle, i + 1, j)
-                            improved = True
-                            break
-            VRP_solution.append(cycle)
+                            for i in pointIDs:
+                                if best < delivery_info[i]['time_window_max']:
+                                    best -= gain
+                                    cycle = self.swapPositions(cycle, i + 1, j)
+                                    # print('swap cycle: ', cycle)
+                                    improved = True
+                                    break
         # print('Final Decision: cycle: ', cycle, '\nDistance Matrix: ', distSD)
         print('------------------------------------------')
-        return VRP_solution
+        return cycle
     def changepoints(self, VRP_solution, numbVehicles):
-        Without_fail_tour = [i for i in range(self.n_vehicles) if i != numbVehicles] # the list of tour without the tour with error
+        print('VRP Solution',VRP_solution)
+        print('num of the fail tour', numbVehicles)
+        Without_fail_tour = [i for i in range(self.n_vehicles) if i != numbVehicles]
+        print('without fail tour: ',Without_fail_tour)
         # dist of point with center of other cluster
         deliveries = self.env.get_delivery()
         for k in Without_fail_tour:
             center = self.centers[k]
-            points = {ele['id'] : np.hypot(center[0] - ele['lat'], center[1] - ele['lng'])
-                      for _, ele in deliveries.items() for i in VRP_solution[numbVehicles] if ele['id'] == i}
-            sortedDist = sorted(points.items(), key=lambda x: x[1], reverse=False)
-            for i in sortedDist:
-                print(i)
-                print(self.Point_w_min_dist)
-                if self.Point_w_min_dist.count(i[0]) == 0:
-                    self.Point_w_min_dist.append(i[0])
-                    print(self.Point_w_min_dist)
-                    break
+            points = {'CeVeh_id':[],'dist':[]}
+            for _, ele in deliveries.items():
+                for i in VRP_solution[numbVehicles]:
+                    if ele['id'] == i:
+                        dist = np.hypot(center[0] - ele['lat'], center[1] - ele['lng']) # - calculate the distance of points by the center of cluster
+                        points['dist'].append(dist)
+                        points['CeVeh_id'].append([k, ele['id']])
 
-            # self.Point_w_min_dist = points['CeVeh_id'][np.argmin(points['dist'])][1]
-            try:
-                VRP_solution[numbVehicles].remove(self.Point_w_min_dist[-1])
-                a = VRP_solution[k].pop(-1) # remove zero from the other tour
-                VRP_solution[k].append(self.Point_w_min_dist[-1])
-                VRP_solution[k].append(a)
-            except:
-                raise Exception('Model is infeasible')
+            print('good points for change: ',points['CeVeh_id'][np.argmin(points['dist'])][1])
+            Point_w_max_dist = points['CeVeh_id'][np.argmin(points['dist'])][1]
+            VRP_solution[numbVehicles].remove(Point_w_max_dist)
+            a = VRP_solution[k].pop(-1)
+            VRP_solution[k].append(Point_w_max_dist)
+            VRP_solution[k].append(a)
 
         # print(points)
         points_groups ={}
@@ -203,8 +212,7 @@ class solAgent(Agent):
         self.n_vehicles = len(vehicles_dict)
         self.n_deliveries = len(delivery_to_do)
         self.n_nodes = 1 + len(delivery_to_do)
-        dist = distPoints(self.env)
-        dist_dict, arcos = dist.dist_evaluate()
+
         points_groups = self.clusterDeliveries(delivery_to_do, self.n_vehicles)
         print('points_group after clustering: ', points_groups)
         processed = True
@@ -217,9 +225,9 @@ class solAgent(Agent):
             # for tour in points_groups.values():
             print('tour in start of while: ',points_groups)
             # dist_matrix = distCalculate(self.env.get_delivery(),tour)
-            VRP_solution = self.swap2opt(points_groups, dist_dict, 500)
-            print('optimum tour after 2- opt',VRP_solution)
-            # VRP_solution.append(opt_tour)
+            opt_tour = self.swap2opt(points_groups, 500)
+            print('optimum tour after 2- opt',opt_tour)
+            VRP_solution.append(opt_tour)
 
             __cost, errorFlag, k = self.env.evaluate_VRP(VRP_solution)
             if not errorFlag:

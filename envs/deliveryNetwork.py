@@ -130,6 +130,7 @@ class DeliveryNetwork():
     def evaluate_VRP(self, VRP_solution):
         # USAGE COST
         usage_cost = 0
+        errorFlag = False
         for k in range(self.n_vehicles):
             if len(VRP_solution[k]) > 0:
                 usage_cost += self.vehicles[k]['cost']
@@ -144,7 +145,10 @@ class DeliveryNetwork():
                     VRP_solution[k][i],
                 ]
                 if tour_time > self.delivery_info[VRP_solution[k][i]]['time_window_max']:
-                    raise Exception('Too Late for Delivery: ', VRP_solution[k][i])
+                    print('Too Late for Delivery: ', VRP_solution[k][i])
+                    errorFlag = True
+                    return travel_cost, errorFlag, k
+                    # raise Exception('Too Late for Delivery: ', VRP_solution[k][i])
 
             travel_cost += self.conv_time_to_cost * tour_time
 
@@ -155,9 +159,12 @@ class DeliveryNetwork():
                 tot_vol_used += self.delivery_info[VRP_solution[k][i]]['vol']
 
             if tot_vol_used > self.vehicles[k]['capacity']:
-                raise Exception(f"Capacity Bound Violeted {tot_vol_used}>{self.vehicles[k]['capacity']}")
+                print(f"Capacity Bound Violeted {tot_vol_used}>{self.vehicles[k]['capacity']}")
+                errorFlag = True
+                return travel_cost, errorFlag, k
+                # raise Exception(f"Capacity Bound Violeted {tot_vol_used}>{self.vehicles[k]['capacity']}")
 
-        return usage_cost + travel_cost
+        return usage_cost + travel_cost, errorFlag, self.n_vehicles
 
     def render(self):
         plt.figure()

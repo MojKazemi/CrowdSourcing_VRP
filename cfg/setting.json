@@ -1,6 +1,6 @@
 {
-    "n_deliveries": 80,
-    "n_vehicles": 3,
+    "n_deliveries": 12,
+    "n_vehicles": 2,
     "vols_vehicles": [10, 10, 10],
     "costs_vehicles": [10, 5, 10],
     "vol_distr": {

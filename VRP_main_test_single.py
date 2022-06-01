@@ -4,8 +4,7 @@ import logging
 import numpy as np
 from envs.deliveryNetwork import DeliveryNetwork
 from agents.exactVRPAgent import ExactVRPAgent
-from agents.solAgent import solAgent
-from agents.distPoints import distPoints
+from agents.VRPAgent import VRPAgent
 import time
 
 if __name__ == '__main__':
@@ -24,45 +23,25 @@ if __name__ == '__main__':
     env = DeliveryNetwork(settings)
     delivery_info = env.get_delivery()
 
-    # dist = distPoints(env)
-    # dist_dict, arcos = dist.dist_evaluate()
-    # print(dist_dict)
-    # print(dist_dict[(0,2)])
-    # breakpoint()
     # TODO: I have to find points that should be delivery
     # Temporary --------------------
     delivery_to_do = []
     for _, ele in delivery_info.items():
         delivery_to_do.append(ele['id'])
 
+    vehicles_dict = env.get_vehicles()
 
-    agent = solAgent(env)
-    env.prepare_crowdsourcing_scenario()
-    print(delivery_to_do)
-    id_deliveries_to_crowdship = agent.compute_delivery_to_crowdship(env.get_delivery())
-    remaining_deliveries, tot_crowd_cost = env.run_crowdsourcing(id_deliveries_to_crowdship)
-    for i in env.delivery_info:
-        if env.delivery_info[i]['crowdsourced'] == 1:
-            print('the id of crowdsourced',i)
-    print("remaining_deliveries: ", remaining_deliveries.keys())
-    print("tot_crowd_cost: ", tot_crowd_cost)
+    agent = VRPAgent(env)
 
     start = time.time()
-
-    VRP_solution = agent.compute_VRP(remaining_deliveries, env.get_vehicles())
-
-
-    # VRP_solution = agent.main(delivery_to_do, vehicles_dict)
-
+    cycle = agent.distCalculate(env.get_delivery())
     end = time.time()
     comp_time = end - start
-
+    # print('Competition Time',comp_time)
     # VRP_solution=[]
     # VRP_solution.append(cycle)
     # print(VRP_solution)
-    env.render_tour(remaining_deliveries, VRP_solution)
-    print(VRP_solution)
-    print('Competition Time', comp_time)
+    # env.render_tour(delivery_to_do, cycle)
 
 
 
