@@ -7,27 +7,18 @@
 - Decide which delivery to crowdship based on the l2 distance 
 - Solve in an exact way the VRP by means of Lazy constraints
 
-\section{Problem description}
+# Problem description
 Here we have a method in TSP which do not require to visit all customers, along a gradient of ‘‘decision power’’ attributed to the tour planner.At one extreme of this gradient lies the case in which the tour planner has no choice over which customer will require a delivery (we assume that we visit customers to deliver some goods) and which will not, because a random variable determines customer presence. This problem is the Probabilistic Travelling Salesman Problem (PTSP). In the PTSP a decision-maker has to devise a tour to visit a set of delivery points, some of which might be later revealed not to be available. Because the decision-maker does not know in advance which customers will drop out, he/she faces two options:
-\begin{itemize}
-    \item The first option is to solve a TSP problem for each possible set of
-    delivery points,wait until the status of all customers is revealed
-    and use the TSP tour visiting the customers requiring delivery. This strategy is computationally expensive.
-    \item  The second one which calls a priori approach. In this approach, in first planning an a priori tour visiting all the customers. When the stochastic outcome is revealed, the
-    decision-maker amends the solution, skips the deliveries that
-    are not required, and performs the remaining ones in the same
-    order as they appear in the "a priori tour". This has an advantage that, when the problem is solved for
-    a multi-day planning horizon, all routes will be similar.
-\end{itemize}
-Given a graph G=(V, A) in the figure \ref{fig:General idea}. Denote with $ O \subseteq V $ the subset of deliveries offered for crowdsourcing and with $ A \subseteq O $ the set of
-accepted offers, which is only revealed at the end of the day.
 
-\begin{figure} [H]
-    \centering
-    \includegraphics[height=4.2cm]{Images/General_Idea.png}
-    \caption
-    {The relation between sets, V, O and A. The figure also shows the TSP tour of the owned vehicle when A is the deliveries accepted for crowdsourcing}
-    \label{fig:General idea}
-\end{figure}![General_idea](https://user-images.githubusercontent.com/72742057/214815765-1f3b41af-98f8-47c9-8910-ce55d516b81d.png)
+- The first option is to solve a TSP problem for each possible set of delivery points,wait until the status of all customers is revealed and use the TSP tour visiting the customers requiring delivery. This strategy is computationally expensive.
+- The second one which calls a priori approach. In this approach, in first planning an a priori tour visiting all the customers. When the stochastic outcome is revealed, the decision-maker amends the solution, skips the deliveries that are not required, and performs the remaining ones in the same order as they appear in the "a priori tour". This has an advantage that, when the problem is solved for a multi-day planning horizon, all routes will be similar.
+
+Given a graph G=(V, A) in the figure below. Denote with $O \subseteq V$ the subset of deliveries offered for crowdsourcing and with $A \subseteq O$ the set of accepted offers, which is only revealed at the end of the day.
+
+<figure>
+  <img src=![General_idea](https://user-images.githubusercontent.com/72742057/214834250-1768d68b-42e8-4b0c-9b20-f177adb83069.png)
+ alt="Example of a graph">
+  <figcaption>Figure 1: Example of a graph</figcaption>
+</figure>
 
  In this sense, the problem is a two-stage problem and the set of accepted offers is only revealed in the second stage. The decision-maker has to decide which deliveries to offer for crowdsourcing.
