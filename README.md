@@ -16,9 +16,8 @@ Here we have a method in TSP which do not require to visit all customers, along 
 Given a graph G=(V, A) in the figure below. Denote with $O \subseteq V$ the subset of deliveries offered for crowdsourcing and with $A \subseteq O$ the set of accepted offers, which is only revealed at the end of the day.
 
 <figure>
-  <img src=![General_idea](https://user-images.githubusercontent.com/72742057/214834250-1768d68b-42e8-4b0c-9b20-f177adb83069.png)
- alt="Example of a graph">
-  <figcaption>Figure 1: Example of a graph</figcaption>
+  <img src="/Image/General_Idea.png" alt="Example of a graph">
+  <figcaption>Figure 1: The relation between sets, V, O and A. The figure also shows the TSP tour of the owned vehicle when A is the deliveries accepted for crowdsourcing</figcaption>
 </figure>
 
  In this sense, the problem is a two-stage problem and the set of accepted offers is only revealed in the second stage. The decision-maker has to decide which deliveries to offer for crowdsourcing.
