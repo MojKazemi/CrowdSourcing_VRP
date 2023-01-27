@@ -42,10 +42,10 @@ if __name__ == '__main__':
     env = DeliveryNetwork(settings, './cfg/delivery_info.json')
 
     agents = [
-        HeuGroup31(env)
+        HeuGroup31(env),
         # heuGroup31_rnd(env),
         # heuGroup31_crowd(env)
-        # ExactVRPAgent(env)
+        ExactVRPAgent(env)
     ]
 
     data = {}

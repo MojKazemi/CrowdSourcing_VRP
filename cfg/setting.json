@@ -12,5 +12,6 @@
         "name": "constant",
         "K": 0.1
     },
-    "distance_function": "euclidian"
+    "distance_function": "euclidian",
+    "depot": [0,0]
 }
