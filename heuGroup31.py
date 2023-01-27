@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
-import os
-import random
-import time
-import copy
+import os, copy, time, random
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -32,7 +29,7 @@ class distFromFile():
 
 class HeuGroup31(Agent):
     '''
-    This Class define the heuristic algorithm for crowdsourcing-VRP
+    This Class define explained heuristic algorithm for crowdsourcing-VRP
     Selecting rowdsource points based on 3 methods :
         - distance from the depot
         - Crowdsource cost of points
@@ -136,7 +133,8 @@ class HeuGroup31(Agent):
         '''
         This function calculate the cost function of crowdsourcing-VRP
         and if the time window for each point and the capacity limitation of each vehicle are not satisfied
-        the errorFlag will become TRUE. The output of the function is cost of VRP and tour's number
+        the errorFlag will become TRUE. 
+        The output of the function is cost of VRP and tour's number
         '''
         # USAGE COST
         usage_cost = 0
@@ -405,14 +403,12 @@ class HeuGroup31(Agent):
                 points_groups = self.changepoints(VRP_solution, k, self.dist_dict)
                 if iteration == 100:
                     print('Model infeasible')
-
         best_VRP_solution = copy.deepcopy(VRP_solution)
         best_cost = __cost
         # # change the vehicles assignment to clusters
         best_VRP_solution, best_cost = self.swapVehicleTour(best_VRP_solution, best_cost,self.n_vehicles)
         # # change points btw points to find better cluster
         best_VRP_solution, best_cost = self.checkChangePoint(best_VRP_solution,best_cost,self.dist_dict,self.n_vehicles)
-
         end = time.time()
         self.comp_time = end - start
         print('Compute Time: ',self.comp_time)
@@ -422,7 +418,6 @@ class HeuGroup31(Agent):
         self.quantile = np.random.uniform()
         # self.quantile_crowd = np.random.uniform()
         # self.numCrowd = random.randint(0,len(self.env.get_delivery()))
-
         id_deliveries_to_crowdship = self.compute_delivery_to_crowdship(self.env.get_delivery())
         remaining_deliveries, tot_crowd_cost = self.env.run_crowdsourcing(id_deliveries_to_crowdship)
         try:
@@ -430,13 +425,11 @@ class HeuGroup31(Agent):
             obj = self.env.evaluate_VRP(VRP_solution)
         except:
             obj = 1000
-
         self.data_improving_quantile['quantile'].append(self.quantile)
         # self.data_improving_quantile['quantile_crowdCost'].append(self.quantile_crowd)
         # self.data_improving_quantile['quantile_crowdCost'].append(self.numCrowd)
         self.data_improving_quantile['performance'].append(tot_crowd_cost + obj)
         self.data_improving_quantile['compute_time'].append(self.comp_time)
-
 
     def start_test(self):
         db = pd.DataFrame(self.data_improving_quantile)
