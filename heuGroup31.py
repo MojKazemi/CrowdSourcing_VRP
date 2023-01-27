@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# Solution for CrowdSourcing problem -- Write by Mojtaba kazemi 
 import os, copy, time, random
 import matplotlib.pyplot as plt
 import numpy as np
